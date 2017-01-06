@@ -55,7 +55,9 @@ tf.train.Saver().restore(sess, './trainData/train')
 
 print 'read train data successful.'
 while True:
-    path = raw_input("请输入要识别的图像名称：")
+    path = raw_input("请输入图像名称[q退出]：")
+    if path == 'q' or path == 'Q':
+        break
     print 'filename is : ', path
     if os.path.exists(path) == False:
         print path,' 不存在'
